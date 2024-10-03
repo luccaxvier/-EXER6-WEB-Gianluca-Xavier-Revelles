@@ -1,0 +1,93 @@
+CODIGO EM HMTL:
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Interação</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Página Principal</h1>
+    </header>
+    <main>
+        <h2>Digite um número:</h2>
+        <input type="number" id="inputNumber" placeholder="Digite a quantidade de numeros" />
+        <button id="submitButton">Enviar</button>
+        <div id="output"></div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Exemplo de Interação.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
+
+CODIGO EM CSS:
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgb(rgb(11, 1, 1), rgb(128, 128, 128), rgb(255, 255, 255));
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+header {
+    background: #000000;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+main {
+    padding: 20px;
+    flex: 1;
+}
+footer {
+    background: #010000;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 12px;
+}
+button{
+    background-color: dodgerblue;
+    border: none;
+    padding: 5px;
+    width: 15%;
+    color: white;
+    border-radius: 10px;
+    font-size: 15px;
+    cursor: pointer;
+}
+button:hover{
+    background-color: deepskyblue;
+}
+#output {
+    margin-top: 20px;
+    font-size: 16px;
+    color: #333;
+}
+
+CODIGO EM JAVASCRIPT:
+
+document.getElementById('submitButton').addEventListener('click', function() {
+    const inputNumber = document.getElementById('inputNumber').value;
+    const outputDiv = document.getElementById('output');
+    // Acredito que limpa a saida anterior
+    outputDiv.innerHTML = '';
+    if (!inputNumber) {
+        outputDiv.innerHTML = 'Por Favor, insira um número válido';
+    } else {
+        const number = parseInt(inputNumber, 10);
+        if (isNaN(number) || number <= 0) {
+            outputDiv.innerHTML = 'Por Favor, insira um número válido';
+        } else {
+            for (let i = 1; i <= number; i++) {
+                outputDiv.innerHTML += `<p> Gianluca Xavier ${i}</p>`;
+            }
+        }
+    }
+});

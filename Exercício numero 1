@@ -1,0 +1,85 @@
+CODIGO EM HMTL:
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Interação</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>Pagina principal</header>
+    <div class="container">
+        <h1>Bem-vindo!</h1>
+        <label for="nome">Digite seu nome:</label>
+        <input type="text" id="nome" placeholder="Seu nome aqui"><br><br>
+        <button id="btnEnviar">Enviar</button>
+        <p id="mensagem"></p>
+    </div>
+    <script src="script1.js"></script>
+    <footer>
+        <p> pagina de interação com html,css e javascript</p>
+    </footer>
+</body>
+</html>
+
+CODIGO EM CSS:
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgb(rgb(11, 1, 1), rgb(128, 128, 128), rgb(255, 255, 255));
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+header {
+    background: #000000;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+main {
+    padding: 20px;
+    flex: 1;
+}
+footer {
+    background: #010000;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 12px;
+}
+button{
+    background-color: dodgerblue;
+    border: none;
+    padding: 5px;
+    width: 15%;
+    color: white;
+    border-radius: 10px;
+    font-size: 15px;
+    cursor: pointer;
+}
+button:hover{
+    background-color: deepskyblue;
+}
+#output {
+    margin-top: 20px;
+    font-size: 16px;
+    color: #333;
+}
+
+CODIGO EM JAVASCRIPT:
+
+document.getElementById('btnEnviar').addEventListener('click', function() {
+    const nomeInput = document.getElementById('nome').value;
+    const mensagemElement = document.getElementById('mensagem');
+    if (nomeInput.trim() === '') {
+        mensagemElement.textContent = 'Por Favor, insira seu nome.';
+        mensagemElement.style.color = 'red';
+    } else {
+        mensagemElement.textContent = `Olá, ${nomeInput}! seja bem vindo a página do aluno:`;
+        mensagemElement.style.color = 'green';
+    }
+});
